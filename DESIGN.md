@@ -135,7 +135,7 @@ Ce fichier décrit l'identité par défaut, utilisée quand le projet n'a pas de
 charte. Dans le kit studio, `src/theme.css` est généré à partir de son
 en-tête (`npm run theme`, automatique quand l'app tourne) : on ne modifie
 jamais `src/theme.css` à la main. Le projet Claude « Charte graphique » produit un fichier au même
-format pour chaque client : il remplace celui-ci dans `design/DESIGN.md`.
+format pour chaque client : il remplace celui-ci à la racine du projet.
 L'en-tête (entre les deux lignes `---`) est lu par les outils de contrôle ;
 le texte ci-dessous est lu par l'agent.
 

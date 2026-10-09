@@ -39,6 +39,7 @@ Ce fichier est la version de l'agent posée dans un projet créé à partir du k
 - **Les tailles** : `text-xs` 12, `text-sm` 14, `text-base` 16, `text-lg` 18, `text-xl` 20, `text-2xl` 24, `text-3xl` 28, `text-4xl` 32, `text-5xl` 40, `text-6xl` 48. Espacements de l'échelle Tailwind (multiples de 4).
 - **Ton travail** porte sur ce qu'aucun composant ne décide : le layout, la hiérarchie, la composition, la densité, l'action primaire, les données vraisemblables (`redaction.md`, `donnees.md`), les textes. Toutes les règles de ce fichier sur ces sujets s'appliquent, interdits compris.
 - **Le contrôle** reste une passe bornée : `npm run verifier`, correction groupée des P0 et P1, une relance, puis tu rends ; les P2 vont dans le résumé. Ensuite tu ouvres l'écran dans le navigateur invisible et tu regardes le rendu.
+- **Logo** : si le designer a déposé `public/logo.svg` (ou `.png`), il va dans l'encart `data-logo-slot` avec `<img src="/logo.svg" alt="<nom de la marque>">`. Sinon, le monogramme sur l'initiale du produit, en `bg-primary`.
 - **Ce qui manque** au catalogue se construit à partir des composants existants, avec `// manque: <raison>` au-dessus et une ligne dans `MANQUES.md`.
 
 ## Ton rôle
