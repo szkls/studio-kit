@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "controle": "node scripts/controle.mjs",
     "catalogue": "node scripts/catalogue.mjs",
+    "theme": "node scripts/theme.mjs",
     "verifier": "tsc -p tsconfig.app.json --noEmit && node scripts/controle.mjs"
   },
   "dependencies": {

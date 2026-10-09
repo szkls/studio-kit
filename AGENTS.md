@@ -10,16 +10,16 @@ Ce projet est un kit de maquettage du studio design : une petite app React avec 
 ## Sources de vérité
 
 - `context.md` : le projet, les utilisateurs, le périmètre, les règles métier.
-- `charte-graphique.md` : la marque, le design system, la direction de maquettage.
-- `src/theme.css` : l'apparence (couleurs par usage, arrondis, police). Le seul endroit où une couleur s'écrit.
+- `DESIGN.md` : la marque, le design system, la direction de maquettage.
+- `DESIGN.md` porte aussi l'apparence (couleurs par usage, arrondis, police) dans son en-tête : `src/theme.css` en est généré automatiquement. On ne touche jamais `src/theme.css` à la main.
 - `CATALOGUE.md` : les composants et blocs disponibles. Rien d'autre ne s'utilise sans être signalé dans `MANQUES.md`.
 
-Tu ne modifies jamais le corps de `context.md` ni de `charte-graphique.md` (seulement leur section « Propositions de mise à jour »), ni `src/components/`, ni `src/studio/`.
+Tu ne modifies jamais le corps de `context.md` ni de `DESIGN.md` (seulement leur section « Propositions de mise à jour »), ni `src/components/`, ni `src/studio/`.
 
 ## Les trois questions avant d'écrire un écran
 
 1. **Qu'est-ce que j'utilise ?** Ce qui est dans `CATALOGUE.md`. Tu pars du bloc le plus proche quand il y en a un.
-2. **Qu'ai-je le droit de faire ?** Assembler des composants, avec les classes du thème. `npm run verifier` refuse le reste et dit comment corriger.
+2. **Qu'ai-je le droit de faire ?** Assembler des composants, avec les classes du thème, en respectant les règles et interdits de l'agent UI. `npm run verifier` classe les écarts en P0, P1, P2 et dit comment corriger.
 3. **Et si ça n'existe pas ?** Tu le construis à partir des composants existants, tu écris `// manque: <raison>` au-dessus, et tu ajoutes une ligne dans `MANQUES.md`. Tu continues : en avant-vente, on ne s'arrête pas.
 
 ## Commandes
@@ -28,6 +28,7 @@ Tu ne modifies jamais le corps de `context.md` ni de `charte-graphique.md` (seul
 - `npm run dev` : lance l'app (en arrière-plan). Le port est propre au projet ; la page d'accueil liste les écrans.
 - `npm run verifier` : compilation + contrôle des règles. Obligatoire avant de rendre un écran.
 - `npm run catalogue` : régénère `CATALOGUE.md` après l'ajout d'un composant.
+- `npm run theme` : régénère `src/theme.css` depuis `DESIGN.md` (automatique quand l'app tourne).
 - `npm run build` : version publiable dans `dist/`.
 
 ## Le designer n'est pas développeur

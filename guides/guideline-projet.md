@@ -28,7 +28,7 @@ Comment tu le traites :
 - Tu ne modifies jamais son corps. La seule zone où tu écris est la section « Propositions de mise à jour (à valider) » en fin de fichier (voir plus bas).
 - S'il se contredit, ou s'il contredit ce que le designer te dit dans la conversation, tu ne t'arrêtes pas : tu retiens la version la plus récente (ce que le designer vient de dire, sinon l'entrant le plus récent), tu le dis en une ligne, tu le notes en proposition de mise à jour, et tu continues. Tu ne t'arrêtes pas, même si les deux versions changent la structure de ce que tu produis : tu choisis, tu le dis, et la question va au porteur de projet.
 
-### `charte-graphique.md` - la source de vérité visuelle
+### `DESIGN.md` - la source de vérité visuelle
 
 Ce qu'il contient : la marque, le design system ou UI kit imposé, ses composants, ses tokens, sa typographie, ses couleurs par rôle, son ton, et ce qu'il autorise ou interdit. Il est produit par le designer à partir d'une url, d'un fichier Figma, d'un dépôt ou d'une documentation de design system.
 
@@ -45,7 +45,7 @@ Ce qu'il contient : qui fait quoi, dans quel ordre, pour produire un écran. Il 
 
 ### Ce qui fait autorité quand deux sources se contredisent
 
-Dans l'ordre : ce que le designer dit dans la conversation (à noter en proposition de mise à jour) ; `context.md` pour le fond ; `charte-graphique.md` pour la forme ; les guidelines et les expertises pour la méthode ; tes connaissances générales en dernier, et jamais contre les quatre premiers.
+Dans l'ordre : ce que le designer dit dans la conversation (à noter en proposition de mise à jour) ; `context.md` pour le fond ; `DESIGN.md` pour la forme ; les guidelines et les expertises pour la méthode ; tes connaissances générales en dernier, et jamais contre les quatre premiers.
 
 ---
 
@@ -57,7 +57,7 @@ Tu ne t'arrêtes jamais de toi-même pendant une génération ; le seul arrêt p
 
 Ajouter est toujours permis ; modifier ne l'est pas. Tu peux compléter un fichier source par une proposition datée, jamais réécrire ce qu'il dit.
 
-**Les sources d'abord, la proposition ensuite.** Tu te bases au maximum sur `context.md` et `charte-graphique.md` : ce qu'ils disent, tu l'appliques, même si tu aurais fait autrement. Tu ne t'en écartes, ou tu n'ajoutes ce qu'ils ne disent pas, que s'il y a un vrai enjeu : un parcours qui bloque, une règle qui contredit l'usage réel, une accessibilité qui ne passe pas, une information dont dépend l'écran. Et chaque fois, tu le signales de la même façon, dans ta réponse et dans le fichier que tu produis, avec trois choses :
+**Les sources d'abord, la proposition ensuite.** Tu te bases au maximum sur `context.md` et `DESIGN.md` : ce qu'ils disent, tu l'appliques, même si tu aurais fait autrement. Tu ne t'en écartes, ou tu n'ajoutes ce qu'ils ne disent pas, que s'il y a un vrai enjeu : un parcours qui bloque, une règle qui contredit l'usage réel, une accessibilité qui ne passe pas, une information dont dépend l'écran. Et chaque fois, tu le signales de la même façon, dans ta réponse et dans le fichier que tu produis, avec trois choses :
 - ce que la source dit, ou ne dit pas (« le contexte ne précise pas… », « le contexte demande X ») ;
 - ce que tu proposes à la place ou en plus ;
 - pourquoi, en une phrase : l'enjeu, et le principe ou la source qui le justifie.
@@ -91,7 +91,7 @@ Quand une session se termine et que la section a gagné des lignes, tu le dis en
 Dans cet ordre, sans le narrer au designer :
 1. Ce fichier.
 2. `context.md` en entier.
-3. `charte-graphique.md` en entier si la session touche à quelque chose de visuel.
+3. `DESIGN.md` en entier si la session touche à quelque chose de visuel.
 4. `ecrans/decisions.md` s'il existe : les règles déjà fixées pour le projet.
 5. Les dernières lignes de `ecrans/journal.md` s'il existe, pour savoir où en est le projet et reprendre un écran en cours plutôt que d'en commencer un autre.
 
@@ -117,7 +117,7 @@ Ensuite seulement, tu réponds à la demande. Si elle porte sur un écran, `guid
 
 ## Ce que tu ne fais jamais sur ce projet
 
-- Modifier le corps de `context.md`, de `charte-graphique.md`, de ce fichier ou de `guides/guideline-generation.md`. Y ajouter une proposition datée, oui ; réécrire ce qu'ils disent, non : ça, c'est le designer.
+- Modifier le corps de `context.md`, de `DESIGN.md`, de ce fichier ou de `guides/guideline-generation.md`. Y ajouter une proposition datée, oui ; réécrire ce qu'ils disent, non : ça, c'est le designer.
 - Générer un écran sans passer par `guides/guideline-generation.md`.
 - Choisir entre deux sources qui se contredisent sans le dire, ou s'arrêter pour poser une question.
 - Inventer une couleur, un composant, une police ou un ton quand la charte les définit, ou un accent quand elle n'existe pas.
@@ -132,8 +132,8 @@ Ensuite seulement, tu réponds à la demande. Si elle porte sur un écran, `guid
 AGENTS.md                        ← instructions pour l'IA, source unique (CLAUDE.md et Copilot y renvoient)
 CATALOGUE.md / MANQUES.md        ← ce qui est disponible, ce qui manque
 context.md                       ← source de vérité fonctionnelle, produite par le designer
-charte-graphique.md              ← source de vérité visuelle, produite par le designer
-src/theme.css                    ← l'apparence de la marque
-guides/                          ← les deux guidelines et les cinq expertises
+DESIGN.md                        ← source de vérité visuelle, produite par le designer ; son en-tête pilote l'apparence
+src/theme.css                    ← généré depuis DESIGN.md (ne pas modifier)
+guides/                          ← les deux guidelines, les expertises et les annexes de l'agent UI
 ecrans/                          ← tout ce que l'IA produit (un dossier par écran, journal, décisions, questions)
 ```

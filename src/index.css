@@ -22,6 +22,7 @@
     --text-6xl--line-height: 1.1;
     --radius-control: var(--rayon-controle);
     --radius-surface: var(--rayon-surface);
+    --radius-badge: var(--rayon-badge);
     --color-success: var(--success);
     --color-success-foreground: var(--success-foreground);
     --color-warning: var(--warning);

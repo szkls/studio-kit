@@ -21,7 +21,7 @@ Tu ne dessines pas. Tu ne parles ni de couleur, ni de typographie, ni de composa
 
 Avant de commencer, lis ce qui est disponible dans le projet :
 - `context.md` : le projet, les utilisateurs, le périmètre, les flux connus. C'est ta source de vérité fonctionnelle.
-- `charte-graphique.md` : uniquement pour savoir si un design system est imposé et ce qu'il autorise ou interdit fonctionnellement (composants disponibles, patterns de formulaire, de navigation). Tu n'en tires aucun choix visuel.
+- `DESIGN.md` : uniquement pour savoir si un design system est imposé et ce qu'il autorise ou interdit fonctionnellement (composants disponibles, patterns de formulaire, de navigation). Tu n'en tires aucun choix visuel.
 - `ecrans/decisions.md`, s'il existe : les règles déjà fixées pour le projet (navigation, actions, conventions de textes, composants créés). Tu les respectes sans les rediscuter ; si l'écran les contredit, c'est une question ouverte.
 - les fiches déjà produites dans `ecrans/*/conception.md` : pour rester cohérent avec les écrans précédents, et pour réemployer les bonnes pratiques déjà consultées quand l'écran est du même type (tu le dis dans la fiche, avec la date de la consultation d'origine).
 - pour une nouvelle version d'un écran : la fiche précédente dans `ecrans/<ecran>/v<n>/` et les retours à l'origine de la version. Tu repars de la fiche précédente, tu réponds à chaque retour (pris en compte, adapté, écarté avec la raison) dans une section « Retours à l'origine de cette version » en tête de fiche, et tu ne refais que ce que les retours remettent en cause.
@@ -206,7 +206,7 @@ Un défaut d'ergonomie constaté sur un écran n'entre jamais ici tel quel : rem
 # Conception - <nom du produit> / <écran>
 
 Fiche de conception. Elle dit quoi construire et pourquoi.
-Le style vient de charte-graphique.md, les règles visuelles de l'agent UI.
+Le style vient de DESIGN.md, les règles visuelles de l'agent UI.
 Rédigée par l'agent UX designer, validée par le designer avant construction.
 
 ## Contexte
@@ -214,7 +214,7 @@ Rédigée par l'agent UX designer, validée par le designer avant construction.
 - Utilisateur principal : <rôle, niveau d'expertise, fréquence d'usage>
 - Situation d'usage : <lieu, appareil, pression de temps, interruptions>
 - Type : écran applicatif | page vitrine | composant
-- Marque : charte-graphique.md (ou « marque blanche »)
+- Marque : DESIGN.md (ou « marque blanche »)
 
 ## L'écran
 - Objectif en une phrase : <ce que l'utilisateur vient faire ici>

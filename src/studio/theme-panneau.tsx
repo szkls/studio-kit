@@ -8,18 +8,6 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { contraste, melanger, rendreLisible, texteSur } from './couleurs'
 
-/** Variables du thème, dans l'ordre du fichier exporté. */
-const VARIABLES = [
-  '--background', '--foreground', '--card', '--card-foreground', '--popover', '--popover-foreground',
-  '--muted', '--muted-foreground', '--border', '--input',
-  '--primary', '--primary-foreground', '--secondary', '--secondary-foreground', '--accent', '--accent-foreground', '--ring',
-  '--destructive', '--success', '--success-foreground', '--warning', '--warning-foreground', '--info', '--info-foreground',
-  '--chart-1', '--chart-2', '--chart-3', '--chart-4', '--chart-5',
-  '--sidebar', '--sidebar-foreground', '--sidebar-primary', '--sidebar-primary-foreground',
-  '--sidebar-accent', '--sidebar-accent-foreground', '--sidebar-border', '--sidebar-ring',
-  '--rayon-controle', '--rayon-surface', '--radius',
-]
-
 const POLICES = ['Roboto', 'Inter', 'DM Sans', 'Manrope', 'Nunito', 'Source Sans 3', 'IBM Plex Sans', 'Work Sans', 'Montserrat', 'Open Sans', 'Lato', 'Poppins']
 
 type Reglages = { action: string; controle: number; pilule: boolean; surface: number; police: string }
@@ -51,7 +39,7 @@ function lireReglagesActuels(): Reglages {
   const police = cs.getPropertyValue('--font-marque').split(',')[0].replace(/["']/g, '').trim() || 'Roboto'
   return {
     action: cs.getPropertyValue('--primary').trim() || '#2563eb',
-    controle: controle >= 999 ? 8 : controle,
+    controle: controle >= 999 ? 6 : controle,
     pilule: controle >= 999,
     surface: rem(cs.getPropertyValue('--rayon-surface').trim()),
     police,
@@ -76,13 +64,6 @@ function appliquer(r: Reglages) {
   chargerPolice(r.police)
 }
 
-function exporter(police: string): string {
-  const cs = getComputedStyle(document.documentElement)
-  const lignes = VARIABLES.map((v) => `  ${v}: ${cs.getPropertyValue(v).trim()};`)
-  const importPolice = police === 'Roboto' ? '' : `@import url("${urlPolice(police)}");\n\n`
-  return `/* THÈME DE LA MARQUE - exporté depuis le panneau Thème le ${new Date().toLocaleDateString('fr-FR')}.\n   Remplace src/theme.css par ce fichier. */\n${importPolice}:root {\n  --font-marque: "${police}", system-ui, sans-serif;\n${lignes.join('\n')}\n}\n`
-}
-
 /** À appeler une fois au démarrage : réapplique les réglages enregistrés dans ce navigateur. */
 export function restaurerTheme() {
   const r = lireStockage()
@@ -91,7 +72,6 @@ export function restaurerTheme() {
 
 export function PanneauTheme({ ouvert, surFermer }: { ouvert: boolean; surFermer: () => void }) {
   const [r, setR] = useState<Reglages>(() => lireStockage() ?? lireReglagesActuels())
-  const [copie, setCopie] = useState(false)
 
   useEffect(() => { if (ouvert) setR(lireStockage() ?? lireReglagesActuels()) }, [ouvert])
 
@@ -105,16 +85,21 @@ export function PanneauTheme({ ouvert, surFermer }: { ouvert: boolean; surFermer
   const ratio = contraste(r.action, texteSur(r.action))
   const lisible = ratio >= 4.5
 
-  const telecharger = () => {
-    const blob = new Blob([exporter(r.police)], { type: 'text/css' })
-    const a = document.createElement('a')
-    a.href = URL.createObjectURL(blob)
-    a.download = 'theme.css'
-    a.click()
-    URL.revokeObjectURL(a.href)
-  }
-  const copier = async () => {
-    try { await navigator.clipboard.writeText(exporter(r.police)); setCopie(true); setTimeout(() => setCopie(false), 1500) } catch { /* presse-papiers indisponible */ }
+  const [etatEnregistrement, setEtatEnregistrement] = useState<'' | 'ok' | 'erreur'>('')
+  const enregistrer = async () => {
+    const fond = melanger(r.action, '#ffffff', 0.9)
+    const corps = {
+      action: r.action, texte: texteSur(r.action), selectionFond: fond,
+      selectionTexte: rendreLisible(r.action, fond, 4.5),
+      controle: r.pilule ? '9999px' : `${r.controle}px`, surface: `${r.surface}px`, police: r.police,
+    }
+    try {
+      const rep = await fetch('/__studio/theme', { method: 'POST', body: JSON.stringify(corps) })
+      if (!rep.ok) throw new Error()
+      ecrireStockage(null)
+      setEtatEnregistrement('ok')
+    } catch { setEtatEnregistrement('erreur') }
+    setTimeout(() => setEtatEnregistrement(''), 2500)
   }
   const reinitialiser = () => {
     document.documentElement.removeAttribute('style')
@@ -128,7 +113,7 @@ export function PanneauTheme({ ouvert, surFermer }: { ouvert: boolean; surFermer
       <SheetContent side="right" className="w-80 gap-0 overflow-y-auto sm:max-w-80">
         <SheetHeader>
           <SheetTitle>Thème</SheetTitle>
-          <SheetDescription>Les réglages s'appliquent à tous les écrans. Exporte le fichier pour les garder dans le projet.</SheetDescription>
+          <SheetDescription>Couleur d'action, arrondis et police, appliqués à tous les écrans.</SheetDescription>
         </SheetHeader>
         <div className="flex flex-col gap-6 px-4 pb-6">
           <div className="flex flex-col gap-2">
@@ -176,9 +161,13 @@ export function PanneauTheme({ ouvert, surFermer }: { ouvert: boolean; surFermer
           </div>
           <Separator />
           <div className="flex flex-col gap-2">
-            <Button onClick={telecharger}>Exporter theme.css</Button>
-            <Button variant="outline" onClick={copier}>{copie ? 'Copié' : 'Copier le thème'}</Button>
+            {import.meta.env.DEV && (
+              <Button onClick={enregistrer}>
+                {etatEnregistrement === 'ok' ? 'Enregistré dans DESIGN.md' : etatEnregistrement === 'erreur' ? "Échec de l'enregistrement" : 'Enregistrer dans le projet'}
+              </Button>
+            )}
             <Button variant="ghost" onClick={reinitialiser}>Revenir au thème du projet</Button>
+            <p className="text-xs text-muted-foreground">Les réglages s'essaient d'abord dans ce navigateur. « Enregistrer » les écrit dans DESIGN.md, la charte du projet, pour tout le monde.</p>
           </div>
         </div>
       </SheetContent>

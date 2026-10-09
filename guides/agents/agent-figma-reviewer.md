@@ -107,7 +107,7 @@ Puisque tu ne juges pas, tout ce qui relève du design est signalé à part, dan
 - un composant du design system Figma dont les propriétés diffèrent du code ;
 - un élément présent d'un côté et absent de l'autre avant synchronisation (tu l'ajoutes à la cible, et tu le dis).
 
-Après une synchronisation Figma → HTML, l'écran passe par `agent-ui-reviewer` comme n'importe quel écran ; ses écarts sont alors tranchés par le designer, pas par toi.
+Après une synchronisation Figma → HTML, l'écran peut passer par la revue de l'agent UI (`guides/agents/ui-designer/revue.md`) comme n'importe quel écran ; ses écarts sont alors tranchés par le designer, pas par toi.
 
 ## Règles de rigueur
 

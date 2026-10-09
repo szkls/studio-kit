@@ -12,8 +12,8 @@ Il faut Node.js sur ton ordinateur (installateur sur nodejs.org, version LTS). C
 
 ## Au quotidien
 
-- **Le projet** : mets `context.md` (projet Contexte) et `charte-graphique.md` (projet Charte) à la racine.
-- **La marque** : remplace `src/theme.css` par le thème produit par le projet Charte, ou règle-le dans le panneau **Thème** de l'app (couleur d'action, arrondis, police) puis exporte-le.
+- **Le projet** : mets `context.md` (projet Contexte) et `DESIGN.md` (projet Charte) à la racine. Sans `DESIGN.md` de client, le socle du studio s'applique.
+- **La marque** : elle suit `DESIGN.md` toute seule. Pour essayer autre chose, ouvre le panneau **Thème** de l'app (couleur d'action, arrondis, police) puis clique sur **Enregistrer dans le projet** : `DESIGN.md` est mis à jour et tous les écrans suivent.
 - **Un écran** : demande-le comme à l'oral, « génère-moi l'écran de connexion ». L'IA te donne son lien.
 - **Tes références** : des captures dans `ecrans/<nom-de-l-ecran>/references/`.
 - **Les états** : sélecteur en bas de chaque écran. La barre se masque avec l'icône œil, et revient avec la touche « o ».
@@ -24,10 +24,10 @@ Il faut Node.js sur ton ordinateur (installateur sur nodejs.org, version LTS). C
 | Dossier | Contenu |
 |---|---|
 | `ecrans/` | Tes écrans, un dossier chacun, avec leur cadrage et leur résumé |
-| `src/theme.css` | La marque : le seul fichier à changer pour changer l'apparence |
+| `DESIGN.md` | La marque : couleurs, arrondis, police, direction de maquettage. Le seul fichier à changer pour changer l'apparence |
 | `src/components/ui/` | Les 61 composants shadcn (ne pas modifier) |
 | `src/components/blocs/` | Des blocs de départ : connexion, inscription, tableau de bord, navigation |
-| `guides/` | Les guidelines et les expertises UX / UI lues par l'IA |
+| `guides/` | Les guidelines et les expertises UX / UI lues par l'IA (l'agent UI est ta compétence `ui-designer`, adaptée au kit) |
 | `CATALOGUE.md`, `MANQUES.md` | Ce que l'IA peut utiliser, et ce qui manque |
 
 Deux écrans d'exemple (`exemple-connexion`, `exemple-tableau-de-bord`) montrent le résultat. Supprime-les depuis l'accueil quand tu démarres un projet.

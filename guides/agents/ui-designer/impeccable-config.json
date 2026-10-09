@@ -1,0 +1,9 @@
+{
+  "detector": {
+    "ignoreRules": ["overused-font"],
+    "designSystem": { "enabled": true }
+  },
+  "hook": {
+    "enabled": false
+  }
+}
