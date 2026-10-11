@@ -222,6 +222,98 @@ site change ou devient inaccessible. Une capture par vue clé, nommée
 - à ne pas reprendre : le logo et la tagline sans accord de la communication ; les chiffres sans leur date.
 - note : référence de structure pour un site de services (portfolio × industries × preuve), famille "corporate" absente du reste du corpus.
 
+### shadcn/ui, exemples d'application — https://ui.shadcn.com/examples/dashboard
+- url : https://ui.shadcn.com/examples/dashboard (et https://ui.shadcn.com/examples/tasks)
+- visuel : ouvrir l'url dans le navigateur invisible (ou la capture dans `captures/`) et regarder la page avant de concevoir ; la fiche dit quoi regarder, l'écran montre comment c'est fait
+- type : app
+- relevé le : 2026-10-11 (texte des pages lu ; visuel à confirmer à la première utilisation)
+- secteur : démonstration de la bibliothèque de composants du kit
+- tags : back-office, tableau-de-bord, liste-dense, navigation-latérale, clair, composants-du-kit
+- ce qu'on retient :
+  - structure (tableau de bord) : navigation latérale en groupes nommés (principal, documents, utilitaires) avec l'utilisateur en pied ; titre de page ; une rangée d'indicateurs ; un graphique avec sélecteur de période ; puis le tableau de travail, avec sa barre d'outils (vue, colonnes, ajout) et sa pagination.
+  - structure (liste de tâches) : filtres par statut et priorité au-dessus du tableau, bouton d'ajout à droite ; colonnes identifiant, titre précédé d'une étiquette de catégorie, statut, priorité, menu d'actions par ligne ; pied avec nombre de lignes sélectionnées, lignes par page, page courante.
+  - densité : tableau compact, une dizaine à vingt-cinq lignes par page ; cartes et graphique plus aérés.
+  - ce qui est directement réutilisable : ce sont exactement les composants du kit ; la composition se reproduit sans rien créer.
+- à ne pas reprendre : la rangée de quatre indicateurs identiques à grand chiffre (tic d'IA, voir `regles-ui.md`) ; le contenu anglais de démonstration ; l'incohérence de période du graphique (sélecteur « 3 mois », légende « 6 mois »).
+- note : la référence de composition pour un back-office construit avec le kit.
+
+### Tremor — https://www.tremor.so
+- url : https://www.tremor.so (gabarits : https://blocks.tremor.so/templates)
+- visuel : ouvrir l'url dans le navigateur invisible (ou la capture dans `captures/`) et regarder la page avant de concevoir ; la fiche dit quoi regarder, l'écran montre comment c'est fait
+- type : app
+- relevé le : 2026-10-11 (texte de la page lu ; visuel à confirmer à la première utilisation)
+- secteur : bibliothèque de tableaux de bord (React, Tailwind, Recharts, comme le kit)
+- tags : tableau-de-bord, indicateurs, graphiques, données, sobre, clair
+- ce qu'on retient :
+  - indicateurs : chaque chiffre est accompagné de son contexte (une valeur et ce qu'elle représente sur un total, « 1,85 sur 10 Go » ; un taux de disponibilité sous forme de barre de suivi), pas un chiffre seul.
+  - graphiques : beaucoup de petites formes compactes à côté des grandes : liste en barres, barre de suivi, mini-courbe, barre ou cercle de progression. Le graphique plein écran n'est pas le seul outil.
+  - tableaux de données opérationnelles : propriétaire, statut, région, capacité, coût, dernière modification.
+  - gabarits : tableau de bord, pages de rapport, planification ; à ouvrir pour la composition d'ensemble.
+- à ne pas reprendre : les gabarits payants tels quels ; les couleurs de démonstration.
+- note : la référence pour donner du contexte aux chiffres et varier les formes de données.
+
+### Stripe Dashboard — https://docs.stripe.com/dashboard/basics
+- url : https://docs.stripe.com/dashboard/basics (l'application elle-même demande un compte)
+- visuel : ouvrir l'url dans le navigateur invisible et regarder les captures de la documentation ; la fiche dit quoi regarder, l'écran montre comment c'est fait
+- type : app
+- relevé le : 2026-10-11 (documentation lue)
+- secteur : back-office financier à très grand nombre de fonctions
+- tags : back-office, navigation-latérale, liste-filtrable, fiche-détail, accueil-personnalisable, raccourcis
+- ce qu'on retient :
+  - navigation latérale en trois étages : les objets du quotidien d'abord (soldes, transactions, clients, catalogue), puis les raccourcis (pages épinglées et récentes), puis les modules par produit ; le reste derrière « Plus ».
+  - accueil : indicateurs et graphiques choisis par l'utilisateur, et surtout les alertes à traiter (litiges, vérifications en attente) mises en avant.
+  - liste puis fiche : chaque liste se filtre et s'exporte ; un clic sur un nom ouvre une fiche qui regroupe tout ce qui lui est rattaché.
+  - réglages séparés en trois familles : personnels, du compte, par produit.
+  - recherche globale et raccourcis clavier pour les utilisateurs quotidiens.
+- à ne pas reprendre : le vocabulaire de paiement, la marque.
+- note : la référence pour organiser un outil métier qui a beaucoup de modules sans noyer l'utilisateur.
+
+### Carbon, tableau de données — https://carbondesignsystem.com/components/data-table/usage/
+- url : https://carbondesignsystem.com/components/data-table/usage/
+- visuel : ouvrir l'url dans le navigateur invisible et regarder les exemples ; la fiche dit quoi regarder, l'écran montre comment c'est fait
+- type : documentation
+- relevé le : 2026-10-11 (texte lu)
+- secteur : design system d'entreprise (IBM)
+- tags : tableau, liste-dense, actions-groupées, tri, pagination, règles
+- ce qu'on retient :
+  - barre d'outils réservée aux actions sur tout le tableau (filtres, export, réglages), cinq au plus, le reste dans un menu.
+  - actions par ligne dans un menu de ligne ; moins de trois actions : boutons icône visibles.
+  - sélection : une barre d'actions groupées apparaît en haut du tableau dès qu'une ligne est cochée ; les actions de ligne sont alors désactivées.
+  - une seule hauteur de ligne par tableau, en-tête compris ; lignes hautes seulement si chaque ligne porte deux lignes de texte.
+  - tri : flèche visible sur la colonne triée et au survol seulement.
+  - pagination toujours en bas ; chargement en squelette plutôt qu'en roue.
+  - titres de colonnes en un ou deux mots, majuscule au premier mot seulement.
+- à ne pas reprendre : l'apparence IBM ; seules les règles de comportement se transposent.
+- note : les règles de référence pour tout écran de liste ou de tableau.
+
+### DSFR, modèles de pages — https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles
+- url : https://www.systeme-de-design.gouv.fr/version-courante/fr/modeles
+- visuel : ouvrir l'url et chaque modèle dans le navigateur invisible ; la fiche dit quoi regarder, l'écran montre comment c'est fait
+- type : documentation
+- relevé le : 2026-10-11 (liste des modèles lue)
+- secteur : secteur public français
+- tags : secteur-public, formulaire, connexion, création-de-compte, page-erreur, gabarit-officiel
+- ce qu'on retient :
+  - modèles de pages officiels : page de connexion, page de création de compte, pages d'erreur.
+  - formulaires types et blocs de champs officiels : adresse électronique, civilité, date, nom et prénom, téléphone, société.
+  - pour un projet du secteur public, ces modèles fixent l'ordre et le libellé des champs, même quand le DSFR n'est pas imposé.
+- à ne pas reprendre : la Marianne, le bloc-marque et les couleurs de l'État hors d'un site de l'État.
+- note : la référence obligée pour une connexion, une création de compte ou un formulaire du secteur public.
+
+### GOV.UK Design System, parcours — https://design-system.service.gov.uk/patterns/
+- url : https://design-system.service.gov.uk/patterns/
+- visuel : ouvrir l'url et le parcours concerné dans le navigateur invisible ; la fiche dit quoi regarder, l'écran montre comment c'est fait
+- type : documentation
+- relevé le : 2026-10-11 (liste des parcours lue)
+- secteur : secteur public britannique
+- tags : formulaire, parcours, démarche, vérification, confirmation, erreurs
+- ce qu'on retient :
+  - des parcours éprouvés pour les démarches : vérifier ses réponses avant envoi, page de confirmation, liste de tâches à compléter, page de question, récupération après erreur de saisie, navigation pas à pas.
+  - des façons de demander chaque donnée courante (adresse, date, nom, téléphone, mot de passe) avec leurs pièges.
+  - des pages de service : page introuvable, service indisponible, problème technique, interruption.
+- à ne pas reprendre : l'apparence GOV.UK ; les cas propres au Royaume-Uni (numéro d'assurance nationale).
+- note : la référence pour un formulaire long ou une démarche en plusieurs étapes.
+
 <!-- Ajouter les fiches sites suivantes ici, une par URL -->
 
 ## Partie 2 — Composants

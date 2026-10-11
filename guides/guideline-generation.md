@@ -77,17 +77,17 @@ Lis l'expertise UI : sa section « Dans le kit studio » d'abord, puis le reste,
 
 | Écran | Annexes |
 |---|---|
-| Applicatif (liste, fiche, formulaire) | `regles-ui.md`, `redaction.md` |
-| Tableau de bord, écran chiffré | les deux + `donnees.md` |
+| Applicatif (liste, fiche, formulaire) | `regles-ui.md`, `redaction.md`, `references-visuelles.md` (fiches `app` et `documentation`) |
+| Tableau de bord, écran chiffré | les trois + `donnees.md` |
 | Page vitrine | `regles-ui.md`, `redaction.md`, `references-landings.md`, `references-visuelles.md`, `regles-motion.md`, `regles-illustration.md` |
 
-1. **Écris la ligne « Je lis ça comme… »**, puis pars du bloc de `src/components/blocs/` le plus proche s'il y en a un.
+1. **Écris la ligne « Je lis ça comme… »**, puis regarde les références dans l'ordre de l'agent UI : celles du designer (`ecrans/<ecran>/references/`, direction de maquettage de `DESIGN.md`) d'abord, les fiches du corpus ensuite. Pars du bloc de `src/components/blocs/` le plus proche s'il y en a un.
 2. **Écris `ecrans/<ecran>/ecran.tsx`** : composant par défaut + `meta` (`titre`, `description`, `etats`). Uniquement des composants du catalogue, des icônes `lucide-react`, les classes du thème, des données vraisemblables (`redaction.md`).
 3. **Navigation de prototype** : `<Link to="/<autre-ecran>">` vers les autres écrans du projet.
 4. **Ce qui manque** au catalogue : construit à partir des composants existants, `// manque: <raison>` au-dessus, une ligne dans `MANQUES.md`.
 5. **Contrôle, une seule fois** : `npm run verifier`. Corrige **tous** les P0 et P1 en un lot, relance une fois. Les P2 restants vont dans le résumé. Puis vérifie mentalement le jeu extrême (un nom de 60 caractères, un montant à 7 chiffres, une liste vide, un libellé allongé de 30 %).
 6. **Regarde l'écran** dans le navigateur invisible, à 1440 px : il s'affiche, rien ne déborde.
-7. **Écris `ecrans/<ecran>/resume.md`** : layout et densité, hiérarchie typo, bloc de départ, composants utilisés et créés, manques, écarts, P2 restants, et ce qui a été décidé sans règle.
+7. **Écris `ecrans/<ecran>/resume.md`** : références utilisées et ce qu'on en a pris, layout et densité, hiérarchie typo, bloc de départ, composants utilisés et créés, manques, écarts, P2 restants, et ce qui a été décidé sans règle.
 8. **Propose les états.** Si le designer accepte : `ui-designer/etats.md`, états dans `meta.etats` et `const etat = useEtat()` (de `@/studio`), une relance de `npm run verifier`.
 
 L'écran est `TERMINÉ` quand il n'y a plus de P0 ni de P1 et que le lien s'affiche.

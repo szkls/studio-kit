@@ -38,6 +38,10 @@ Ce fichier est la version de l'agent posée dans un projet créé à partir du k
 - **Les couleurs et arrondis** s'écrivent par leur usage : `bg-primary`, `text-muted-foreground`, `bg-muted`, `border-border`, `text-destructive`, `bg-success`, `bg-warning`, `chart-1` à `chart-5`, `rounded-control`, `rounded-surface`, `rounded-full` pour un badge. Jamais une valeur ni une couleur de palette : la marque se change dans `DESIGN.md`, pas dans l'écran.
 - **Les tailles** : `text-xs` 12, `text-sm` 14, `text-base` 16, `text-lg` 18, `text-xl` 20, `text-2xl` 24, `text-3xl` 28, `text-4xl` 32, `text-5xl` 40, `text-6xl` 48. Espacements de l'échelle Tailwind (multiples de 4).
 - **Ton travail** porte sur ce qu'aucun composant ne décide : le layout, la hiérarchie, la composition, la densité, l'action primaire, les données vraisemblables (`redaction.md`, `donnees.md`), les textes. Toutes les règles de ce fichier sur ces sujets s'appliquent, interdits compris.
+- **Les références**, par ordre de priorité :
+  1. celles du designer : les captures de `ecrans/<ecran>/references/`, puis la section « Direction de maquettage » de `DESIGN.md`. Tu les regardes toutes avant d'écrire l'écran. Tu en reprends la composition : organisation des zones, densité, place de la navigation et des actions, traitement des listes et des chiffres. Jamais leurs couleurs, leur typographie, leur logo ni leurs textes. Dans le résumé, une ligne par référence : ce que tu en as pris.
+  2. à défaut, ou pour ce qu'elles ne couvrent pas : les fiches de `references-visuelles.md` dont le `type` correspond à l'écran (`app` et `documentation` pour un écran applicatif ou un tableau de bord, les autres types pour une page vitrine). Deux ou trois fiches, ouvertes dans le navigateur invisible.
+  3. une référence ne passe jamais avant une règle de ce fichier ni avant le design system imposé : si elle les contredit, la règle gagne et tu le dis dans le résumé.
 - **Le contrôle** reste une passe bornée : `npm run verifier`, correction groupée des P0 et P1, une relance, puis tu rends ; les P2 vont dans le résumé. Ensuite tu ouvres l'écran dans le navigateur invisible et tu regardes le rendu.
 - **Logo** : si le designer a déposé `public/logo.svg` (ou `.png`), il va dans l'encart `data-logo-slot` avec `<img src="/logo.svg" alt="<nom de la marque>">`. Sinon, le monogramme sur l'initiale du produit, en `bg-primary`.
 - **Ce qui manque** au catalogue se construit à partir des composants existants, avec `// manque: <raison>` au-dessus et une ligne dans `MANQUES.md`.
@@ -71,8 +75,8 @@ contenu. Une proposition de mise à jour s'ajoute, datée, en fin de fichier.
 
 | Écran | Annexes |
 | --- | --- |
-| Écran applicatif (liste, fiche, formulaire) | `regles-ui.md`, `redaction.md` |
-| Tableau de bord, écran chiffré | les deux précédentes + `donnees.md` |
+| Écran applicatif (liste, fiche, formulaire) | `regles-ui.md`, `redaction.md`, `references-visuelles.md` (fiches `app` et `documentation`) |
+| Tableau de bord, écran chiffré | les trois précédentes + `donnees.md` |
 | Page vitrine | `regles-ui.md`, `redaction.md`, `references-landings.md`, `references-visuelles.md`, `regles-motion.md`, `regles-illustration.md` |
 | États demandés en fin d'écran | `etats.md` |
 | Plusieurs propositions | `variantes.md` |
