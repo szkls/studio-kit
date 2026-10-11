@@ -7,7 +7,7 @@ description: Synchronisation exacte, dans les deux sens, entre un écran constru
 
 Ce fichier est une expertise complète et autonome, à installer telle quelle, sans la modifier.
 
-- **Emplacement** : dans le dossier `guides/agents/` à la racine du projet, sous le nom `agent-figma-reviewer.md`, avec les quatre autres expertises. Il n'est ni un sous-agent ni un skill : `guides/guideline-generation.md` dit à la session quand le **lire et l'appliquer** (lue uniquement sur demande du designer (synchronisation Figma)). Le lancer comme sous-agent repart de zéro et relit tout ; c'est ce qu'on évite.
+- **Emplacement** : dans le dossier `guides/agents/` à la racine du projet, sous le nom `agent-figma-reviewer.md`, avec les autres expertises. Il n'est ni un sous-agent ni un skill : `guides/guideline-generation.md` dit à la session quand le **lire et l'appliquer** (lue uniquement sur demande du designer (synchronisation Figma)). Le lancer comme sous-agent repart de zéro et relit tout ; c'est ce qu'on évite.
 - **Le nom d'appel est le champ `name` de l'en-tête : `agent-figma-reviewer`.** C'est ce nom que les guidelines utilisent. Ne le change pas. Si une ancienne version est installée ailleurs sous un autre nom (`figma-reviewer`, dans `.claude/agents/`, `.claude/skills/` ou `.github/agents/`), supprime-la : deux expertises pour le même rôle, c'est le désordre.
 - Si tu es l'IA et que tu lis ce fichier alors qu'il n'est pas dans `guides/agents/`, place-le, puis dis-le au designer en une ligne.
 

@@ -4,7 +4,7 @@ Fichier lu par les agents UI, motion et illustrateur avant de concevoir une
 page vitrine. Il décrit ce que font les meilleures landings du moment, en
 termes de structure et de traitement, pour donner aux agents le vocabulaire
 visuel qu'ils n'ont pas. Il ne se copie pas : il s'applique au produit et à
-la marque du projet. À mettre à jour à chaque veille.
+la marque du projet. À enrichir quand le studio repère de bonnes références.
 
 Sources observées : attio.com, linear.app, alignui.com, airform.space,
 moto-card.com, hill.com, parabol.fi (fiches dans references-visuelles.md).

@@ -105,7 +105,6 @@ L'écran est `TERMINÉ` quand il n'y a plus de P0 ni de P1 et que le lien s'affi
 
 ## Sur demande seulement
 
-- **Veille** (`guides/agents/agent-benchmark-designer.md`) : pour un design system imposé.
 - **Figma** (`guides/agents/agent-figma-reviewer.md`) : envoyer un écran dans Figma (capture de `http://localhost:<port>/<ecran>`) ou reprendre une maquette Figma dans `ecran.tsx`.
 - **Lien client** : `npm run build` produit une version publiable dans `dist/`. Les outils du studio n'y apparaissent qu'avec `?outils` dans l'adresse.
 
@@ -137,7 +136,7 @@ guides/
     agent-ux-designer.md
     agent-ui-designer.md
     ui-designer/          ← annexes de l'agent UI (règles, rédaction, données, états, variantes, revue, références)
-    agent-benchmark-designer.md, agent-figma-reviewer.md
+    agent-figma-reviewer.md
 src/
   theme.css               ← généré depuis DESIGN.md (ne pas modifier)
   components/ui/          ← composants shadcn (ne pas modifier)
