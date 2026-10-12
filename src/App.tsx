@@ -13,7 +13,7 @@ export default function App() {
           <Route path="/:ecran" element={<HoteEcran />} />
         </Routes>
       </BrowserRouter>
-      <Toaster />
+      <Toaster theme="light" position="top-right" />
     </TooltipProvider>
   )
 }
