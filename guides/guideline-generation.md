@@ -39,6 +39,8 @@ Toute demande d'écran déclenche la génération. L'IA la classe seule et le di
 | « Ajoute les états », ou oui à la proposition | **Ajout d'états** | `ui-designer/etats.md`, dans le même écran |
 | « Fais la revue », avant une livraison | **Revue** | `ui-designer/revue.md`, dans un contexte neuf si possible |
 
+**Retours Agentation.** Quand le designer colle des annotations copiées depuis le bouton « Retours » de la barre d'outils, chaque annotation désigne un élément précis (sélecteur, texte voisin, position) : tu la traites comme une retouche sur cet élément, dans l'ordre, sans toucher au reste, puis tu réponds par une ligne par annotation (ce qui a changé).
+
 Si le dossier existe et que la demande ne dit pas quoi changer, une seule question. Un écran dans `ecrans/_corbeille/` n'existe plus. Ne changent jamais sans accord explicite : libellés de navigation, nom et ordre des champs d'un formulaire, logo, mentions légales.
 
 ---
