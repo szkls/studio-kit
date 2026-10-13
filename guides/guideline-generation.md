@@ -4,7 +4,7 @@
 
 Ce fichier s'adresse à l'IA. Ce que tu as à faire :
 
-1. Mets `context.md` (projet Contexte) et `DESIGN.md` (projet Charte) à la racine. Sans `DESIGN.md` de client, le socle du studio s'applique. L'apparence de l'app suit `DESIGN.md` toute seule ; tu peux aussi la régler dans le panneau **Thème** et l'enregistrer.
+1. Mets `context.md` (projet Contexte) et `DESIGN.md` (projet Charte) à la racine. Sans `DESIGN.md` de client, le socle du studio s'applique. L'apparence de l'app suit `DESIGN.md` toute seule ; tu peux aussi l'essayer dans le **Theme Builder** (barre d'outils en bas de l'écran) et l'enregistrer dans le projet.
 2. Tes références visuelles vont dans la section « Direction de maquettage » de `DESIGN.md`, ou dans `ecrans/<nom-de-l-ecran>/references/` pour un écran précis.
 3. Demande comme à l'oral : « génère-moi l'écran de connexion », « fais-moi trois variantes du tableau de bord », « sur la connexion, agrandis le titre », « nouvelle version de la connexion, le client veut… ».
 4. L'IA cadre, assemble l'écran avec les composants du kit, le contrôle une fois, et te donne son lien. Puis elle te propose les états.
@@ -38,6 +38,8 @@ Toute demande d'écran déclenche la génération. L'IA la classe seule et le di
 | « Trois variantes », « propose-moi des directions » | **Variantes** | Temps 0, 1, puis temps 2 selon `ui-designer/variantes.md`, dans `ecrans/<ecran>-a/`, `-b/`, `-c/` |
 | « Ajoute les états », ou oui à la proposition | **Ajout d'états** | `ui-designer/etats.md`, dans le même écran |
 | « Fais la revue », avant une livraison | **Revue** | `ui-designer/revue.md`, dans un contexte neuf si possible |
+
+**Theme Builder.** Si le designer a enregistré un thème dans le Theme Builder, l'en-tête de `DESIGN.md` a changé : relis-le avant d'écrire ou de retoucher un écran. Tu ne crées jamais de réglage de thème dans un écran.
 
 **Retours Agentation.** Quand le designer colle des annotations copiées depuis le bouton « Retours » de la barre d'outils, chaque annotation désigne un élément précis (sélecteur, texte voisin, position) : tu la traites comme une retouche sur cet élément, dans l'ordre, sans toucher au reste, puis tu réponds par une ligne par annotation (ce qui a changé).
 
@@ -143,7 +145,7 @@ src/
   theme.css               ← généré depuis DESIGN.md (ne pas modifier)
   components/ui/          ← composants shadcn (ne pas modifier)
   components/blocs/       ← blocs de départ
-  studio/                 ← accueil, barre d'outils, panneau Thème
+  studio/                 ← accueil, barre d'outils (Theme Builder, Agentation, états)
 ecrans/
   journal.md, decisions.md, questions-porteur.md
   _corbeille/

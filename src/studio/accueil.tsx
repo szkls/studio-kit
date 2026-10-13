@@ -35,7 +35,7 @@ export function Accueil() {
           <h1 className="text-2xl font-medium">Écrans</h1>
           <p className="mt-1 text-sm text-muted-foreground">{ecrans.length} écran{ecrans.length > 1 ? 's' : ''} maquetté{ecrans.length > 1 ? 's' : ''}</p>
         </div>
-        <Button variant="outline" onClick={() => setTheme(true)}><Palette />Thème</Button>
+        <Button variant="outline" onClick={() => setTheme(true)}><Palette />Theme Builder</Button>
       </header>
 
       <Separator className="mt-8" />

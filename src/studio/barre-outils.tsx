@@ -48,7 +48,7 @@ export function BarreOutils({ etats }: { etats: string[] }) {
             </SelectContent>
           </Select>
         )}
-        <Button variant="ghost" size="sm" onClick={() => setTheme(true)}><Palette />Thème</Button>
+        <Button variant="ghost" size="sm" onClick={() => setTheme(true)}><Palette />Theme Builder</Button>
         {import.meta.env.DEV && (
           <Button variant={retours ? 'secondary' : 'ghost'} size="sm" aria-pressed={retours} onClick={basculerRetours}>
             <MessageSquareText />Retours

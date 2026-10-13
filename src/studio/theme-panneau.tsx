@@ -112,7 +112,7 @@ export function PanneauTheme({ ouvert, surFermer }: { ouvert: boolean; surFermer
     <Sheet open={ouvert} onOpenChange={(o) => !o && surFermer()}>
       <SheetContent side="right" className="w-80 gap-0 overflow-y-auto sm:max-w-80">
         <SheetHeader>
-          <SheetTitle>Thème</SheetTitle>
+          <SheetTitle>Theme Builder</SheetTitle>
           <SheetDescription>Couleur d'action, arrondis et police, appliqués à tous les écrans.</SheetDescription>
         </SheetHeader>
         <div className="flex flex-col gap-6 px-4 pb-6">

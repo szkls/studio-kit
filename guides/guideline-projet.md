@@ -115,6 +115,21 @@ Ensuite seulement, tu réponds à la demande. Si elle porte sur un écran, `guid
 
 ---
 
+## Les outils du studio (barre en bas de chaque écran)
+
+Ils sont installés d'office dans le kit : l'IA n'a rien à ajouter dans un écran pour qu'ils apparaissent.
+
+- **Theme Builder** : le designer y essaie une autre couleur d'action, d'autres arrondis, une autre police, et voit tous les écrans changer. « Enregistrer dans le projet » écrit ces réglages dans l'en-tête de `DESIGN.md`, d'où le thème est régénéré ; « Revenir au thème du projet » annule l'essai. C'est l'outil de démonstration de la marque blanche.
+- **Agentation** (bouton « Retours ») : le designer clique sur un élément, écrit sa remarque, copie les retours et les colle à l'IA. Chargé à la demande, présent seulement sur son poste.
+- **Sélecteur d'état** : affiche les états déclarés dans `meta.etats` de l'écran.
+- La touche « o » masque et réaffiche la barre, pour présenter.
+
+Règles pour l'IA :
+- tu ne crées jamais tes propres réglages de couleur, de police ou d'état dans un écran : c'est le rôle de ces outils ;
+- tu ne modifies ni ne stylises ces outils (`src/studio/`) ;
+- si le designer dit avoir changé le thème dans le Theme Builder, tu relis l'en-tête de `DESIGN.md` avant de continuer ;
+- ces outils ne font pas partie de l'écran : ils n'apparaissent ni dans une revue, ni dans un envoi vers Figma, ni dans une capture pour le client (masque la barre).
+
 ## Ce que tu ne fais jamais sur ce projet
 
 - Modifier le corps de `context.md`, de `DESIGN.md`, de ce fichier ou de `guides/guideline-generation.md`. Y ajouter une proposition datée, oui ; réécrire ce qu'ils disent, non : ça, c'est le designer.

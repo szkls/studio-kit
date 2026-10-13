@@ -13,7 +13,7 @@ Il faut Node.js sur ton ordinateur (installateur sur nodejs.org, version LTS). C
 ## Au quotidien
 
 - **Le projet** : mets `context.md` (projet Contexte) et `DESIGN.md` (projet Charte) à la racine. Sans `DESIGN.md` de client, le socle du studio s'applique.
-- **La marque** : elle suit `DESIGN.md` toute seule. Pour essayer autre chose, ouvre le panneau **Thème** de l'app (couleur d'action, arrondis, police) puis clique sur **Enregistrer dans le projet** : `DESIGN.md` est mis à jour et tous les écrans suivent.
+- **La marque** : elle suit `DESIGN.md` toute seule. Pour essayer autre chose, ouvre le **Theme Builder** dans la barre d'outils (couleur d'action, arrondis, police) puis clique sur **Enregistrer dans le projet** : `DESIGN.md` est mis à jour et tous les écrans suivent.
 - **Un écran** : demande-le comme à l'oral, « génère-moi l'écran de connexion ». L'IA te donne son lien.
 - **Tes références** : des captures dans `ecrans/<nom-de-l-ecran>/references/`.
 - **Les retours** : bouton **Retours** de la barre d'outils (Agentation). Clique sur un élément de l'écran, écris ta remarque, copie les retours et colle-les à l'IA.

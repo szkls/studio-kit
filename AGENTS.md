@@ -22,6 +22,10 @@ Tu ne modifies jamais le corps de `context.md` ni de `DESIGN.md` (seulement leur
 2. **Qu'ai-je le droit de faire ?** Assembler des composants, avec les classes du thème, en respectant les règles et interdits de l'agent UI. `npm run verifier` classe les écarts en P0, P1, P2 et dit comment corriger.
 3. **Et si ça n'existe pas ?** Tu le construis à partir des composants existants, tu écris `// manque: <raison>` au-dessus, et tu ajoutes une ligne dans `MANQUES.md`. Tu continues : en avant-vente, on ne s'arrête pas.
 
+## Outils du studio
+
+Theme Builder, Agentation (bouton « Retours ») et le sélecteur d'état sont dans la barre en bas de chaque écran, installés d'office : tu n'ajoutes rien dans un écran pour eux, tu ne crées jamais tes propres réglages de thème ou d'état, et tu ne touches pas à `src/studio/`. Détail dans `guides/guideline-projet.md`, section « Les outils du studio ».
+
 ## Commandes
 
 - `npm install` : une fois, au premier lancement.
